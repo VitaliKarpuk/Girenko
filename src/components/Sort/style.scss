@@ -1,0 +1,52 @@
+.catalog__sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+  span {
+    margin-right: 20px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      list-style: none;
+      margin-right: 20px;
+      border-bottom: 1px dotted rgb(209, 209, 209);
+      transition: all 0.3s;
+
+      &:hover {
+        cursor: pointer;
+        color: #e1adfa;
+        border-color: #e1adfa;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .catalog__sort {
+    ul,
+    span {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .catalog__sort {
+    ul li {
+      margin-right: 10px;
+      font-size: 0.5rem;
+    }
+
+    .catalog__sort span {
+      margin-right: 10px;
+  }
+  }
+}

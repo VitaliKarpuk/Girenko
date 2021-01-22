@@ -1,1 +1,1 @@
-# Girenko
+# webpack-config

@@ -1,0 +1,50 @@
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #fff7ff, #f9f0fe 60%, #ecc9fc);
+  flex-wrap: wrap;
+
+  .ant-input-group-wrapper {
+    width: 400px;
+  }
+}
+
+h1 {
+  margin: 0;
+  span {
+    color: red;
+  }
+}
+
+.header__basket {
+  width: 50px;
+  height: 50px;
+  background-image: url("../../images/icon_basket.png");
+  background-size: 100% 100%;
+}
+
+@media screen and (max-width: 520px){
+  header{
+    font-size: .7rem;
+
+    h1 {
+      order: 1;
+    }
+
+    a{
+      order: 2;
+    }
+
+    .header__basket {
+      width: 30px;
+      height: 30px;
+      order: 3;
+    }
+
+    .ant-input-group-wrapper {
+      order: 4;
+    }
+  }
+}

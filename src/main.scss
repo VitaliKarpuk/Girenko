@@ -1,0 +1,41 @@
+$body-color: rgb(255, 239, 239);
+$text-color: #000000;
+
+body {
+  background-color: $body-color;
+  color: $text-color;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1640px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.icon_tmpl{
+  background: #cb11ab;
+  position: fixed;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  bottom: 60px;
+  right: 5%;
+  border-radius: 50%;
+  transition: opacity 150ms ease-out 5ms,-webkit-transform;
+  transition: transform,opacity 150ms ease-out 5ms;
+
+  &:after {
+    content: '';
+    display: block;
+    background: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2226%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M10.12.12c6.408-.918%2012.315%203.51%2013.194%209.891.879%206.381-3.603%2012.299-10.01%2013.217-2.233.32-6.325-.844-6.325-.844l-3.224%202.867-.793-5.76S.438%2015.72.11%2013.338C-.769%206.957%203.713%201.04%2010.12.121zM8.56%2012.214a1.6%201.6%200%2011-3.2%200%201.6%201.6%200%20013.2%200zm3.2%201.6a1.6%201.6%200%20100-3.2%201.6%201.6%200%20000%203.2zm6.4-1.6a1.6%201.6%200%2011-3.2%200%201.6%201.6%200%20013.2%200z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E) 0 0 no-repeat;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+}
+}
