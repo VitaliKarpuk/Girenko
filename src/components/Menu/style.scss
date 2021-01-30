@@ -14,6 +14,7 @@ nav {
 
     li {
       height: 100%;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -24,6 +25,18 @@ nav {
         cursor: pointer;
         background-color: #e1adfa;
       }
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .categories_active-item {
+      background-color: rgb(5, 109, 170);
     }
   }
 }

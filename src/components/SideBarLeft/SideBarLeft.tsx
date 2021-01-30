@@ -1,6 +1,7 @@
 import React from "react";
 import "antd/dist/antd.css";
 import { Menu } from "antd";
+import { NavLink } from "react-router-dom";
 
 const SideBarLeft = () => {
   const { SubMenu } = Menu;
@@ -48,7 +49,7 @@ const SideBarLeft = () => {
     console.log("click", e);
   };
   return (
-    <Menu mode="inline" style={{ width: 256 }}>
+    <Menu mode="inline" onClick={handleClick} style={{ width: 256 }}>
       {arrSideBar.map((item) =>
         item.inType ? (
           <SubMenu
@@ -60,14 +61,23 @@ const SideBarLeft = () => {
             }
           >
             {item.inType.map((elem: any) => (
-              <Menu.Item key={Math.random()}>{elem}</Menu.Item>
+              <Menu.Item key={Math.random()} >
+                <NavLink to='tytytyy'>
+                  {elem}
+                </NavLink>
+              </Menu.Item>
             ))}
+
           </SubMenu>
         ) : (
-          <Menu.Item key={Math.random()}>
-            {item.type}
-          </Menu.Item>
-        )
+            <Menu.Item key={Math.random()}>
+              <NavLink to='tytytyy'>
+                {item.type}
+              </NavLink>
+
+            </Menu.Item>
+
+          )
       )}
     </Menu>
   );

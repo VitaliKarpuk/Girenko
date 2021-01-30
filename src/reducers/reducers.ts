@@ -1,4 +1,4 @@
-import { GET_DATA, CHOOSE_MATERIAL, SORT_PRICE } from '../constants/constants';
+import { GET_DATA, CHOOSE_MATERIAL, SORT_PRICE, REQUEST_DATA } from '../constants/constants';
 
 export interface Item {
   id: number,
@@ -9,7 +9,7 @@ export interface Item {
   audio: string
 }
 export interface stateType {
-  material : String,
+  material: String,
   breed: String
   price: String
   size: String
@@ -20,29 +20,31 @@ export interface stateType {
 
 
 
-const initialState  = [
-  {
-  material : "",
-  breed: "",
-  price: "",
-  size: "",
-  description: "",
-  img: "",
-  rate: 1
-}
-] 
+const initialState = [
+  //   {
+  //   material : "",
+  //   breed: "",
+  //   price: "",
+  //   size: "",
+  //   description: "",
+  //   img: "",
+  //   rate: 1
+  // }
+]
 
-const reducer = (state = initialState, action: any)   =>  {
-  
+const reducer = (state = initialState, action: any) => {
+
   switch (action.type) {
     case GET_DATA:
       return state = action.payload
     case CHOOSE_MATERIAL:
       return state.filter(elem => elem.material.toUpperCase() === action.payload)
     case SORT_PRICE:
-      return [...state].sort((a:any, b:any) => Number.parseInt(a.price) - Number.parseInt(b.price))
+      return [...state].sort((a: any, b: any) => Number.parseInt(a.fields.price.content[0].content[0].value) - Number.parseInt(b.fields.price.content[0].content[0].value))
+    case REQUEST_DATA:
+      return [...state, action.payload]
     default:
-      return state  
+      return state
   }
 }
 

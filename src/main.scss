@@ -39,3 +39,8 @@ body {
     left: calc(50% - 12px);
 }
 }
+
+.ant-pagination {
+  display: flex;
+  justify-content: center;
+}
