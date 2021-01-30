@@ -11,13 +11,12 @@ import "./style.scss";
 const Catalog: React.FC = () => {
   const desc = ["terrible", "bad", "normal", "good", "wonderful"];
   const dispatch = useDispatch()
-  const data = useSelector(state => state)
+  const data = useSelector((state: any) => state[0])
+  
 
   useEffect(() => {
     dispatch(requesData())
   }, [])
-  console.log(data);
-
 
   return (
     <section className="catalog__wraper">
@@ -25,7 +24,7 @@ const Catalog: React.FC = () => {
       <div className='catalog__side-bar'>
         <SideBarLeft />
         <div className="catalog">
-          {data[0] ? data[0].map((item: any) => (
+          {data ? data.map((item: any) => (
             <Card
               key={item.sys.id}
               hoverable

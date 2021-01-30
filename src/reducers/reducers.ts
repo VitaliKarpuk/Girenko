@@ -20,7 +20,7 @@ export interface stateType {
 
 
 
-const initialState = [
+const initialState: any = [
   //   {
   //   material : "",
   //   breed: "",
@@ -38,7 +38,7 @@ const reducer = (state = initialState, action: any) => {
     case GET_DATA:
       return state = action.payload
     case CHOOSE_MATERIAL:
-      return state.filter(elem => elem.material.toUpperCase() === action.payload)
+      return state.filter((elem: { material: string; }) => elem.material.toUpperCase() === action.payload)
     case SORT_PRICE:
       return [...state].sort((a: any, b: any) => Number.parseInt(a.fields.price.content[0].content[0].value) - Number.parseInt(b.fields.price.content[0].content[0].value))
     case REQUEST_DATA:
